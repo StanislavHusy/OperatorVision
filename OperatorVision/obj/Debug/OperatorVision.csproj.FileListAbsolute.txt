@@ -1,0 +1,16 @@
+C:\projects\OperatorVision\OperatorVision\bin\Debug\OperatorVision.exe.config
+C:\projects\OperatorVision\OperatorVision\bin\Debug\OperatorVision.exe
+C:\projects\OperatorVision\OperatorVision\bin\Debug\OperatorVision.pdb
+C:\projects\OperatorVision\OperatorVision\bin\Debug\MathNet.Numerics.dll
+C:\projects\OperatorVision\OperatorVision\bin\Debug\System.ValueTuple.dll
+C:\projects\OperatorVision\OperatorVision\bin\Debug\MathNet.Numerics.xml
+C:\projects\OperatorVision\OperatorVision\bin\Debug\System.ValueTuple.xml
+C:\projects\OperatorVision\OperatorVision\obj\Debug\OperatorVision.csproj.AssemblyReference.cache
+C:\projects\OperatorVision\OperatorVision\obj\Debug\OperatorVision.csproj.SuggestedBindingRedirects.cache
+C:\projects\OperatorVision\OperatorVision\obj\Debug\OperatorVision.Form1.resources
+C:\projects\OperatorVision\OperatorVision\obj\Debug\OperatorVision.Properties.Resources.resources
+C:\projects\OperatorVision\OperatorVision\obj\Debug\OperatorVision.csproj.GenerateResource.cache
+C:\projects\OperatorVision\OperatorVision\obj\Debug\OperatorVision.csproj.CoreCompileInputs.cache
+C:\projects\OperatorVision\OperatorVision\obj\Debug\OperatorVision.csproj.CopyComplete
+C:\projects\OperatorVision\OperatorVision\obj\Debug\OperatorVision.exe
+C:\projects\OperatorVision\OperatorVision\obj\Debug\OperatorVision.pdb
