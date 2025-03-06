@@ -126,21 +126,21 @@ A one-dimensional double array converted from a two-dimensional(100х10) array i
 
 //for (int c = 0; c < 10000; c++)
 
-Навчальна вибірка порівняно невелика, кількість її елементів недостатньо для повноцінного навчання, але ці елементи можна використовувати кілька разів.
-З функцією Random() нейромережа навчається краще, ніж циклом, який послідовно повторює всі елементи навчальної вибірки.
+The training sample is small, the number of its elements is not enough, but these elements can be used several times.
+The Random() function trains better than a cycle that sequentially repeats all elements of the training sample.
 
 // for (int c = num; c <num + 200; c++)
 
-На розмічених 200 зображеннях, що не брали участь у навчанні, підраховується ефективність нейромережі.
-Потім результати та ваги нейронів мережі записуються в txt файли.
+The efficiency of the neural network is calculated on the last 200 labeled images.
+Then the results and weights of the network neurons are written to txt files.
 
 ![image](https://user-images.githubusercontent.com/125378481/219041985-4c884467-cc30-4d1e-b9db-66c2578d61f7.png)
 
-(файл із збереженою навченою нейромережею)
+(file with saved trained neural network)
 
      //////mechanic digits
-навчання нейромережі, що вгадує друковані цифри, які нарізані з особових рахунків функцією Perimeter.
-Я планував визначати друковані цифри перевіркою на відповідність із заздалегідь підготовленими кальками цифр, але цей спосіб давав збої. Просканована друкована цифра часто є унікальною (скан у низькому розширенні), тому довелося використовувати нейромережі.
+I planned to identify printed digits by checking for correspondence with previously prepared tracings of digits, but this method failed. The scanned printed digit is often unique (scanned at low resolution), so I had to use neural networks.
+The Perimeter function slices customer numbers into ones than the neural network learns to guess printed digits.
 
 ![image](https://user-images.githubusercontent.com/125378481/219044207-89665242-5542-4893-ae74-95d56daa6454.png)
 ![image](https://user-images.githubusercontent.com/125378481/219044226-3d912b13-fcd2-420e-b1de-e80db5bb9910.png)
@@ -154,28 +154,21 @@ A one-dimensional double array converted from a two-dimensional(100х10) array i
 ![image](https://user-images.githubusercontent.com/125378481/219044356-2201f83c-9632-4136-ab8f-c136368adb62.png)
 ![image](https://user-images.githubusercontent.com/125378481/219044376-d7fe30d5-26ae-4da5-9ade-8c9bc1f2fcc9.png)
 
-Сегмент здебільшого ідентичний third part , де нейромережа вгадує цифри, написані рукою.
-
      //////second part
-Навчання нейромережі, що відповідає, чи є у вставленему у неї рядку показання чи ні. Нейромережа має трохи меншу ефективність (96-98%), ніж та, що працює з особовими рахунками (99%+), але це не заважає об'єднаній програмі. Особові рахунки і показання паралельні, помилкові спрацьовування відсіюються, тому що не мають пари особового рахунку.
+This neural network learns to determine meter readings. The neural network has a slightly lower efficiency (96-98%) than the one that works with customer numbers (99%+), but this does not hinder the combined program. Customer numbers and meter readings are parallel, false positives are filtered out because they do not have a customer number pair.
 
 ![image](https://user-images.githubusercontent.com/125378481/219045492-1872983d-ec93-4281-8912-58b1c974ed9d.png)
-(нейромережа помилково визначила, що цей рядок - показання)
+(the neural network incorrectly determined that this line is a meter reading)
 
      //////third part
-Навчання нейромережі, що вгадує рукописні цифри, які нарізані з рядків-показів функцією Perimeter.
-Спочатку я використав MNIST датасет (60к розмічених цифр), але на цифрах, написаних контролером, нейромережа показала жахливі результати (<50%, хоча на MNIST перевірочному датасеті відсоток успішних вгадувань був близько 98). Довелося проводити розмітку цифр самостійно. З двома тисячами розмічених цифр, я досяг 80 відсотків успішних вгадувань, і можливо зі збільшенням навчальної вибірки відсоток досяг би планки 90-95. Однак я впевнений, що це тупикова гілка розвитку. Область, де пишуть показання, доцільніше замінити поштовим індексом.
+The neural network learns to guess handwritten digits that are cut from the meter reading lines by the Perimeter function.
+Initially, I used the MNIST dataset (60k labeled digits), but on the digits written by the controller, the neural network showed terrible results (<50%, although on the MNIST test dataset the percentage of successful guesses was about 98).I had to do the digit marking myself. With two thousand digit markings, I achieved 80 percent of successful guesses, and perhaps with an increase in the training sample, the percentage would reach the level of 90-95. However, I am sure that this is a dead end branch of development. It would be more appropriate to replace the area where the meter readings are written with a postal code.
 
 ![image](https://user-images.githubusercontent.com/125378481/219046882-bfcab13f-1cdc-424c-a768-2e7350994698.png)
 
      //////united
-У мене не дуже багато просканованних сторінок контролерів, з усіх були сформовані навчальні вибірки, крім останніх п'ятьох. На них здійснюється перевірка об'єднаної програми.(відео за посиланням
+I don't have many scanned pages, training samples were formed from all of them, except for the last five. The combined program is tested on them.(video link
 https://drive.google.com/file/d/1CkTENVJSMnnw9AY8-0b71aGU57q4PX2-/view?usp=sharing)
-
-     //////button2_Click(object sender, EventArgs e) (можливе майбутнє)
-Щоб трохи полегшити собі процес формування навчальних вибірок, я написав невеликий клікер, що заощаджує мені 5-10 секунд для кожного розміченого зображення (ви вже бачили його роботу у гіфках).
-Дещо зміненим клікером можна було користуватися для внесення до бази показань (API у програмі-базі не було).
-До показань справа не дійшла, але я вводив подібним чином кілька тисяч телефонів абонентів. (відео за посиланням https://drive.google.com/file/d/1wuzVtq7a08TJmGSePOl2WcHsZJFgsQSP/view?usp=sharing)
  
  
 
