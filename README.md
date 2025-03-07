@@ -122,7 +122,7 @@ The read_input function writes the training sample to an int array, the variable
 //for (int d1 = 0; d1 < 15; d1++)
 
 This cycle looks for delta learning coefficient, changing other parameters of the neural network did not bring any results.
-A one-dimensional double array converted from a two-dimensional(100х10) array is inserted into the Intelect2[0] neural network, In two hidden layers, a "thinking" process occurs, which forms a double array with one element, where the value of this element, tending to 0.01, says that there is no customer numbers in the inserted row, and the value, tending to 0.99, says that there is.
+A one-dimensional double array converted from a two-dimensional(100х10) array is inserted into the Intelect2[0] neural network. In two hidden layers, a "thinking" process occurs, which forms a double array with one element, where the value of this element, tending to 0.01, says that there is no customer numbers in the inserted row, and the value, tending to 0.99, says that there is.
 
 //for (int c = 0; c < 10000; c++)
 
